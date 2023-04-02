@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cva } from 'cva'
+import { cva } from 'class-variance-authority'
 
 defineProps(['modelValue'])
 const emits = defineEmits(['update:modelValue'])

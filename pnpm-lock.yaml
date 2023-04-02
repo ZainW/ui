@@ -10,9 +10,9 @@ dependencies:
   '@unocss/reset':
     specifier: ^0.50.6
     version: 0.50.6
-  cva:
-    specifier: npm:class-variance-authority@^0.4.0
-    version: /class-variance-authority@0.4.0(typescript@4.9.5)
+  class-variance-authority:
+    specifier: ^0.4.0
+    version: 0.4.0(typescript@4.9.5)
 
 devDependencies:
   '@antfu/eslint-config':

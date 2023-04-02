@@ -16,7 +16,7 @@ const variant = ref()
 </script>
 
 <template>
-  <div class="block h-full">
+  <div class="block h-full font-satoshi">
     <div class="grid w-full max-w-sm items-center gap-1.5 ml-10">
       <ZLabel for="input-!">
         Input
@@ -35,10 +35,10 @@ const variant = ref()
         <ZRadioGroup v-model="variant" :options="variantOptions" label="Variant" />
       </div>
     </div>
-    <div class="gap-4 grid grid-cols-2">
-      <div>
+    <div class="gap-4 grid grid-cols-2 mx-10">
+      <div class="flex items-center">
         <ZToggle v-model="toggle" />
-        {{ toggle }}
+        <span class="ml-4 font-medium">not a label: {{ toggle }}</span>
       </div>
       <div class="">
         <SwitchGroup

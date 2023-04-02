@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type VariantProps, cva } from 'cva'
+import { type VariantProps, cva } from 'class-variance-authority'
 defineProps<{
   variant?: ButtonProps['variant']
   size?: ButtonProps['size']
