@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
+import { presetForms } from '@julr/unocss-preset-forms'
+import presetIcons from '@unocss/preset-icons'
+import presetUno from '@unocss/preset-uno'
 
 export default defineNuxtConfig({
   modules: [
@@ -7,8 +10,8 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
   ],
   unocss: {
-    uno: true,
-    icons: true,
+    presets: [presetUno(), presetIcons(), presetForms()],
+
   },
   typescript: {
     typeCheck: false,

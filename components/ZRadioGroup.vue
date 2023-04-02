@@ -1,8 +1,10 @@
 <script setup lang="ts">
 interface RadioProps {
-  modelValue: string
+  modelValue: Option['value']
   options: Option[]
   label: string
+  description?: string
+  accessabilityLabel?: string
 }
 interface Option {
   key: string
@@ -10,24 +12,19 @@ interface Option {
 }
 defineProps<RadioProps>()
 const emits = defineEmits(['update:modelValue'])
+function onInput(e: Event) {
+  emits('update:modelValue', (e.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
-  <RadioGroup :model-value="modelValue" @update:model-value="emits('update:modelValue', $event)">
-    <RadioGroupLabel>{{ label }}</RadioGroupLabel>
-    <!-- Use the `active` state to conditionally style the active option. -->
-    <!-- Use the `checked` state to conditionally style the checked option. -->
-    <RadioGroupOption
-      v-for="option in options"
-      :key="option.value"
-      v-slot="{ checked }"
-      :value="option.value"
-      as="template"
-    >
-      <li>
-        <span v-show="checked" class="i-heroicons-check-20-solid" />
-        {{ option.key }}
-      </li>
-    </RadioGroupOption>
-  </RadioGroup>
+  <div>
+    <label class="font-semibold text-gray-900 dark:text-slate-50">{{ label }}</label>
+    <div class="space-y-1">
+      <div v-for="option in options" :key="option.value" class="flex items-center">
+        <input :id="option.value" type="radio" :checked="option.value === modelValue" :value="option.value" class="h-4 w-4 border-gray-300 text-slate-600 dark:text-slate-50 focus:ring-slate-600 dark:focus:ring-slate-50" @input="onInput">
+        <label :for="option.value" class="ml-3 block text-sm font-medium leading-6 text-slate-900 dark:text-slate-50">{{ option.key }}</label>
+      </div>
+    </div>
+  </div>
 </template>

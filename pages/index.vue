@@ -1,35 +1,67 @@
 <script setup lang="ts">
-const size = ref('md')
-const sizeOptions = [{ key: 'Small', value: 'sm' }, { key: 'Medium', value: 'md' }, { key: 'Large', value: 'lg' }]
+const textInput = ref('Yo')
+const toggle = ref(false)
+const size = ref()
+const sizeOptions = ref([{ key: 'Small', value: 'sm' }, { key: 'Medium', value: 'md' }, { key: 'Large', value: 'lg' }])
 
-const variant = ref('primary')
-const variantOptions = [
+const variantOptions = ref([
   { key: 'Primary', value: 'primary' },
   { key: 'Destructive', value: 'destructive' },
   { key: 'Outline', value: 'outline' },
   { key: 'Subtle', value: 'subtle' },
   { key: 'Ghost', value: 'ghost' },
   { key: 'Link', value: 'link' },
-]
+])
+const variant = ref()
 </script>
 
 <template>
-  <div class="block">
+  <div class="block h-full">
     <div class="grid w-full max-w-sm items-center gap-1.5 ml-10">
       <ZLabel for="input-!">
         Input
       </ZLabel>
-      <ZInput id="input-!" placeholder="Input" />
+      <ZInput id="input-!" v-model="textInput" placeholder="Input" />
+      {{ textInput }}
     </div>
     <div class="grid grid-cols-2 mt-10">
-      <div>
+      <div class="flex justify-center items-center">
         <ZButton :size="size" :variant="variant">
           Button
         </ZButton>
       </div>
-      <div>
+      <div class="flex gap-12">
         <ZRadioGroup v-model="size" label="Button Size Props" :options="sizeOptions" />
         <ZRadioGroup v-model="variant" :options="variantOptions" label="Variant" />
+      </div>
+    </div>
+    <div class="gap-4 grid grid-cols-2">
+      <div>
+        <ZToggle v-model="toggle" />
+        {{ toggle }}
+      </div>
+      <div class="">
+        <SwitchGroup
+          as="div"
+          class="flex items-center"
+        >
+          <Switch
+            v-model="toggle"
+            :class="[toggle ? 'bg-slate-600' : 'bg-gray-300']"
+            class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 m-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-600"
+          >
+            <span
+              aria-hidden="true"
+              class="pointer-events-none inline-block h-5 w-5 rounded-full bg-slate-50 shadow transform ring-0 transition ease-in-out duration-200" :class="[toggle ? 'translate-x-5' : 'translate-x-0']"
+            />
+          </Switch>
+          <SwitchLabel
+            as="span"
+            class="ml-3"
+          >
+            <span class="text-base font-medium text-slate-900">Label</span>
+          </SwitchLabel>
+        </SwitchGroup>
       </div>
     </div>
   </div>
