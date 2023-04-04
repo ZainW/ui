@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import ZButton from '~~/components/ZButton.vue'
+type ButtonProps = InstanceType<typeof ZButton>['$props']
+
 const textInput = ref('Yo')
 const toggle = ref(false)
-const size = ref()
+const size = ref<ButtonProps['size']>('md')
+interface sizeOption {
+  key: string
+  value: ButtonProps['size']
+}
 const sizeOptions = ref([{ key: 'Small', value: 'sm' }, { key: 'Medium', value: 'md' }, { key: 'Large', value: 'lg' }])
 
 const variantOptions = ref([
@@ -12,7 +19,7 @@ const variantOptions = ref([
   { key: 'Ghost', value: 'ghost' },
   { key: 'Link', value: 'link' },
 ])
-const variant = ref()
+const variant = ref<ButtonProps['variant']>('primary')
 </script>
 
 <template>

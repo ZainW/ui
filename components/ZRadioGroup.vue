@@ -8,7 +8,7 @@ interface RadioProps {
 }
 interface Option {
   key: string
-  value: string
+  value: any
 }
 defineProps<RadioProps>()
 const emits = defineEmits(['update:modelValue'])
@@ -19,7 +19,7 @@ function onInput(e: Event) {
 
 <template>
   <div>
-    <label class="font-semibold text-gray-900 dark:text-slate-50">{{ label }}</label>
+    <label class="font-semibold text-slate-900 dark:text-slate-50">{{ label }}</label>
     <div class="space-y-1">
       <div v-for="option in options" :key="option.value" class="flex items-center">
         <input :id="option.value" type="radio" :checked="option.value === modelValue" :value="option.value" class="h-4 w-4 border-gray-300 text-slate-600 dark:text-slate-50 focus:ring-slate-600 dark:focus:ring-slate-50" @input="onInput">
