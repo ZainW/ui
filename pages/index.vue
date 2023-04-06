@@ -71,8 +71,8 @@ const variant = ref<ButtonProps['variant']>('primary')
         </SwitchGroup>
       </div>
     </div>
-    <div>
-      <span>Phone</span>
+    <span>Phone</span>
+    <div class="ml-5">
       <div class="mockup-phone">
         <div class="camera" />
         <div class="display h-full">
