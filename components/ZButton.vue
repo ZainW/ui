@@ -7,7 +7,7 @@ import { type VariantProps, cva } from 'class-variance-authority'
 // }>()
 defineProps({
   variant: {
-    type: String as PropType<'primary' | 'destructive' | 'outline' | 'subtle' | 'ghost' | 'link' | null>,
+    type: String as PropType<ButtonProps['variant']>,
     required: true,
   },
   size: {
