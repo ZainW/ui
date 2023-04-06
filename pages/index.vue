@@ -71,5 +71,20 @@ const variant = ref<ButtonProps['variant']>('primary')
         </SwitchGroup>
       </div>
     </div>
+    <div>
+      <span>Phone</span>
+      <div class="mockup-phone">
+        <div class="camera" />
+        <div class="display h-full">
+          <div class="artboard bg-white phone-1">
+            <div class="chat chat-start pt-[4rem]">
+              <div class="chat-bubble bg-slate-600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus nesciunt expedita aliquam dolor modi, corrupti doloribus quam, itaque, dicta unde eum ducimus nam omnis? Est id illo commodi assumenda!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
