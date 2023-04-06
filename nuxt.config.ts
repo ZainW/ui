@@ -11,12 +11,18 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     'nuxt-headlessui',
   ],
+  css: [
+    '@unocss/reset/tailwind-compat.css',
+  ],
   unocss: {
     presets: [
       presetUno(),
       presetIcons(),
       presetForms(),
-      presetDaisy(),
+      presetDaisy({
+        themes: false,
+
+      }),
       presetWebFonts({
         provider: 'fontshare',
         fonts: {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ZButton from '~~/components/ZButton.vue'
+
 type ButtonProps = InstanceType<typeof ZButton>['$props']
 
 const textInput = ref('Yo')
@@ -9,7 +10,7 @@ interface sizeOption {
   key: string
   value: ButtonProps['size']
 }
-const sizeOptions = ref([{ key: 'Small', value: 'sm' }, { key: 'Medium', value: 'md' }, { key: 'Large', value: 'lg' }])
+const sizeOptions = ref<sizeOption[]>([{ key: 'Small', value: 'sm' }, { key: 'Medium', value: 'md' }, { key: 'Large', value: 'lg' }])
 
 const variantOptions = ref([
   { key: 'Primary', value: 'primary' },
@@ -75,9 +76,9 @@ const variant = ref<ButtonProps['variant']>('primary')
     <div class="ml-5">
       <div class="mockup-phone">
         <div class="camera" />
-        <div class="display h-full">
+        <div class="display">
           <div class="artboard bg-white phone-1">
-            <div class="chat chat-start pt-[4rem]">
+            <div class="chat chat-start pt-[2rem]">
               <div class="chat-bubble bg-slate-600">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus nesciunt expedita aliquam dolor modi, corrupti doloribus quam, itaque, dicta unde eum ducimus nam omnis? Est id illo commodi assumenda!
               </div>
