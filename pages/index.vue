@@ -21,6 +21,10 @@ const variantOptions = ref([
   { key: 'Link', value: 'link' },
 ])
 const variant = ref<ButtonProps['variant']>('primary')
+useSeoMeta({
+  title: 'Home',
+  description: 'A dumpster of components',
+})
 </script>
 
 <template>
