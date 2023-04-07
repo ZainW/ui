@@ -2,9 +2,9 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "NITRO_PRESET=vercel-edge nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "NITRO_PRESET=vercel-edge nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
