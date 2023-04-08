@@ -7,8 +7,6 @@
     "@antfu/eslint-config": "^0.38.4",
     "eslint": "^8.37.0",
     "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "7.31.8",
     "eslint-config-turbo": "latest"
   },
   "devDependencies": {
