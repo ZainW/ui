@@ -1,35 +1,25 @@
 {
-  "name": "nuxt-app",
+  "name": "ui",
+  "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "pnpm@8.1.1",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "build": "NITRO_PRESET=vercel-edge nuxt build",
-    "dev": "nuxt dev",
-    "generate": "NITRO_PRESET=vercel-edge nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "dependencies": {
-    "@headlessui/vue": "^1.7.12",
-    "@julr/unocss-preset-forms": "^0.0.5",
-    "@unocss/reset": "^0.50.6",
-    "class-variance-authority": "^0.4.0",
-    "daisyui": "^2.51.5",
-    "unocss-preset-daisy": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
-    "@iconify/json": "^2.2.46",
-    "@types/node": "^18.15.11",
-    "@unocss/eslint-config": "^0.50.6",
-    "@unocss/nuxt": "^0.50.6",
-    "@unocss/preset-web-fonts": "^0.50.6",
-    "eslint": "^8.37.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "nuxt": "^3.3.3",
-    "nuxt-headlessui": "^1.1.1",
-    "typescript": "4.9.5",
-    "vue-tsc": "^1.2.0"
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "turbo": "latest"
   }
 }

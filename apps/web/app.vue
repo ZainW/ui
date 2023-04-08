@@ -81,7 +81,7 @@ useHead({
         </SwitchGroup>
       </div>
     </div>
-    <span>Phone</span>
+    <span>Phone thing to test turbo</span>
     <div class="ml-5">
       <div class="mockup-phone">
         <div class="camera" />
